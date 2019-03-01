@@ -2,27 +2,27 @@ package com.company;
 
 public class Predmets {
 
-    private double BulbLight;
+    private double bulbLight;
 
-    private String FurnitureName;
+    private String furnitureName;
 
-    private int Square;
+    private int square;
 
-    private int SuperSquare;
+    private int superSquare;
 
     public double getBulbLight() {
-        return BulbLight;
+        return bulbLight;
     }
 
     public String getFurnitureName() {
-        return FurnitureName;
+        return furnitureName;
     }
 
     public int getSquare() {
-        return Square;
+        return square;
     }
 
     public int getSuperSquare(){
-        return SuperSquare;
+        return superSquare;
     }
 }

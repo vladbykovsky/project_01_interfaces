@@ -2,18 +2,18 @@ package com.company;
 
 public class Bulb extends Predmets {
 
-    private double BulbLight;
+    private double bulbLight;
 
     Bulb(double light){
-        BulbLight = light;
+        bulbLight = light;
     }
 
     Bulb(){
-        BulbLight = 0;
+        bulbLight = 0;
     }
 
     @Override
     public double getBulbLight() {
-        return BulbLight;
+        return bulbLight;
     }
 }

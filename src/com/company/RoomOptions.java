@@ -1,6 +1,6 @@
 package com.company;
 
-public interface IOptions {
+public interface RoomOptions {
 
     boolean CheckLight(String name);
 

@@ -2,41 +2,41 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Room implements IOptions {
+public class Room implements RoomOptions {
 
-    private String RoomName;
-    private double Square;
-    private int FurnitureSquare;
-    private int Window;
-    private double Lighting = 0;
+    private String roomName;
+    private double square;
+    private int furnitureSquare;
+    private int window;
+    private double lighting = 0;
 
     // Список, содержащий мебель и лампочки
     ArrayList<Predmets> listEquipment = new ArrayList<Predmets>();
 
 
     Room(String name, double square, int window){
-        RoomName = name;
-        Square = square;
-        Window = window;
+        roomName = name;
+        this.square = square;
+        this.window = window;
     }
 
     // Вычисление освещенности
     public void CalcOptions(){
 
-        Lighting = Window * 700;
+        lighting = window * 700;
         for (Predmets p : listEquipment){
-            Lighting += p.getBulbLight();
+            lighting += p.getBulbLight();
             if (p.getSuperSquare() > 0)
-                FurnitureSquare += p.getSuperSquare();
+                furnitureSquare += p.getSuperSquare();
             else
-            FurnitureSquare += p.getSquare();
+            furnitureSquare += p.getSquare();
         }
     }
 
     public boolean CheckLight(String name){
         boolean res = true;
         try {
-            if ((Lighting < 300) || (Lighting > 4000)){
+            if ((lighting < 300) || (lighting > 4000)){
                 res = false;
                 throw new WrongIlluminanceException(name);
             }
@@ -50,7 +50,7 @@ public class Room implements IOptions {
     public boolean CheckSquare(String name){
         boolean res = true;
         try {
-            if (FurnitureSquare > Square * 0.7){
+            if (furnitureSquare > square * 0.7){
                 res = false;
                 throw new WrongSpaceException(name);
             }
@@ -62,23 +62,23 @@ public class Room implements IOptions {
     }
 
     public String getRoomName(){
-        return RoomName;
+        return roomName;
     }
 
     public double getSquare(){
-        return  Square;
+        return square;
     }
 
     public int getFurnitureSquare() {
-        return FurnitureSquare;
+        return furnitureSquare;
     }
 
     public int getWindow(){
-        return Window;
+        return window;
     }
 
     public double getLighting(){
-        return Lighting;
+        return lighting;
     }
 
 }

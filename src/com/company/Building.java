@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Building implements IRoom {
 
-    private String BuildingName;
+    private String buildingName;
 
     //Список зданий
     public static ArrayList<Building> listBuilding = new ArrayList<Building>();
@@ -13,16 +13,16 @@ public class Building implements IRoom {
     public static ArrayList<Room> listRoom = new ArrayList<Room>();
 
     Building(String name){
-        BuildingName = name;
+        buildingName = name;
         listBuilding.add(Building.this);
     }
 
     Building(){
-        BuildingName = "Здание без имени";
+        buildingName = "Здание без имени";
     }
 
     public String getBuildingName(){
-        return BuildingName;
+        return buildingName;
     }
 
     @Override
